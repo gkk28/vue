@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.bootcss.com/vu	e/2.4.4/vue.min.js"></script>
+		<link href="https://cdn.bootcss.com/semantic-ui/2.2.13/semantic.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="box">
+			{{a}}
+			<br />
+			{{b}}
+			{{obj.name}}
+		</div>
+	</body>
+	<script type="text/javascript">
+		let vm = new Vue({
+			el:"#box",
+			data: {
+				stark:'gkk',
+				a:111,
+				b:222,
+				obj:{
+					name:"stark",
+					age:18
+				}
+			}
+		})
+		
+		vm.$watch('obj',function () {
+			alert(this.obj.name);
+			//不弹出 因为是一个对象 需要深度监听
+		})
+		document.onclick = function () {
+			vm.obj.name = 'gkk'
+		}
+	</script>
+</html>

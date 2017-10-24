@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.bootcss.com/vu	e/2.4.4/vue.min.js"></script>
+		<link href="https://cdn.bootcss.com/semantic-ui/2.2.13/semantic.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="box">
+			{{a}}
+			<br />
+			{{b}}
+			<br />
+			{{obj.name}}
+		</div>
+	</body>
+	<script type="text/javascript">
+		let vm = new Vue({
+			el:"#box",
+			data: {
+				stark:'gkk',
+				a:111,
+				b:222,
+				obj:{
+					name:"stark",
+					age:18
+				}
+			}
+		})
+		
+		vm.$watch('obj',function (val, oldVal) {
+			alert(this.obj.name);
+			console.log(val);
+			console.log(oldVal)
+		},{
+			//深度监听
+			deep: true
+		})
+		document.onclick = function () {
+			vm.obj.name = 'gkk'
+		}
+		
+		
+//		watch 
+//      参数{ [key: string]: string | Function | Object }
+//  	 第一个监听的数据   第二个回调    第三个对象(深度监听)
+	</script>
+</html>
