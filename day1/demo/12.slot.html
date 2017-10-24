@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+		<gkk>
+			<div>此时这里写的东西会替换slot的位置</div>
+		</gkk>
+    </div>
+	<template id="stark">
+		<div>
+			<slot>
+				slot 开始位置
+			</slot>
+			<h1>slot开始</h1>
+		</div>
+	</template>
+</body>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+        	a: 'aaa'
+        },
+        //组件
+        components: {
+        	'gkk': {
+        		template: '#stark'
+        	}
+        }
+    })
+    //createElement  第一个参数是标签  第二个  属性  第三个  内容
+</script>
+
+</html>

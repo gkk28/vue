@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{name > 5 ? "yes" : "no"}}
+			<div v-text="tpl"></div>
+			<div v-html="tpl"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let vm = new Vue({
+			el: "#app",
+			data: {
+				name: "stark",
+				age: 4,
+				tpl: '<h1> hello stark </h1>'
+			}
+		})
+		
+//		vm.name="gkk"
+	</script>
+</html>

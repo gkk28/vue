@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div v-if="seen">我被显示了</div>
+			<div :id="id">id的值为{{id}}</div>
+			<img :src="imgs" @click="change"/>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let data = {
+			msg: 'hello stark',
+			seen: true,
+			id: 8000,
+			imgs: 'https://cn.vuejs.org/images/logo.png'
+		}
+		
+		let vm = new Vue({
+			el: "#app",
+			data: data,
+			methods:{
+				change(){
+					this.seen = !this.seen
+				}
+			}
+		})
+		
+	</script>
+</html>

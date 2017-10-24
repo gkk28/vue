@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+		<span>stark</span>
+    </div>
+    <script type="x-template" id="box">
+    	<div>
+    		hello,{{name}}
+    	</div>
+    </script>
+</body>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            name: "gkk",
+            html: "<div> hello stark </div>"
+        },
+        template: "#box"
+    })
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+	<style type="text/css">
+		.fontSize{
+			font-size: 50px;
+		}
+		.red{
+			color: red;
+		}
+	</style>
+</head>
+
+<body>
+    <div id="app">
+		<span class="fontSize" :class="{red:addClass}">
+			hello gkk
+		</span>
+    </div>
+
+</body>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+        	addClass: true
+        }
+    })
+    //createElement  第一个参数是标签  第二个  属性  第三个  内容
+</script>
+
+</html>
